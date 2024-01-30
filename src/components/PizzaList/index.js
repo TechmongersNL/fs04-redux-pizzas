@@ -14,15 +14,15 @@ export default function PizzaList() {
   const pizzas = useSelector(selectPizzas);
 
   return (
-    <div>
-      <h1>Pizza Explorer</h1>
-      <p>
+    <div className="p-8">
+      <h1 className="font-bold text-4xl mb-4">Pizza Explorer</h1>
+      <p className="mb-2">
         Welcome back, <strong>{user.name}</strong>!
       </p>
-      <p>
+      <p className="mb-4 italic">
         Here are <strong>{pizzaCount}</strong> pizzas
       </p>
-      <ul>
+      <ul className="flex gap-4">
         {pizzas.map((pizza) => (
           <PizzaItem key={pizza.id} {...pizza} />
         ))}

@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
+import classNames from "classnames";
 import { selectIsFavorite } from "../../store/pizzas/selectors";
 import { toggleFavorites } from "../../store/user/slice";
 
@@ -11,5 +12,12 @@ export const FavoriteButton = ({ pizzaId }) => {
     dispatch(toggleFavorites(pizzaId));
   };
 
-  return <button onClick={handleToggle}>{isFavorite ? "♥" : "♡"}</button>;
+  return (
+    <button
+      className={classNames(isFavorite && "text-red-500")}
+      onClick={handleToggle}
+    >
+      {isFavorite ? "♥" : "♡"}
+    </button>
+  );
 };
